@@ -2,7 +2,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: test-server
-  namespace: test
 spec:
   secretName: test-server-tls
   isCA: false
@@ -19,7 +18,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: test-client
-  namespace: test
 spec:
   secretName: test-client-tls
   isCA: false
