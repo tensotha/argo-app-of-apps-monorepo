@@ -12,10 +12,9 @@ spec:
     helm:
       releaseName: vault
       valueFiles:
-      - $values
+      - $values/applications/vault/values.yaml
   - repoURL: https://github.com/tensotha/argo-app-of-apps-monorepo
     targetRevision: HEAD
-    path: applications/vault
     ref: values
   destination:
     server: "https://kubernetes.default.svc"
