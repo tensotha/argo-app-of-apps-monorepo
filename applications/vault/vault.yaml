@@ -7,6 +7,9 @@ spec:
   project: default
   source:
     chart: vault
+    repoURL: https://github.com/tensotha/argo-app-of-apps-monorepo
+    targetRevision: HEAD
+    path: applications
     version: 0.28.0
     helm:
       releaseName: vault
