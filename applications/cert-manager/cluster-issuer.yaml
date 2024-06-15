@@ -1,8 +1,18 @@
 apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
+kind: Issuer
 metadata:
-  name: selfsigned-clusterissuer
+  name: selfsigned
 spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: selfsigned-cert
+  namespace: cert-manager-test
+spec:
+  dnsNames:
+    - example.com
+  secretName: selfsigned-cert-tls
   issuerRef:
-    kind: Issuer
-    name: selfsigned-issuer
+    name: test-selfsigned

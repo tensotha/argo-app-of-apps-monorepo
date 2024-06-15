@@ -6,7 +6,7 @@ server:
     labels: {}
       # traffic: external
     annotations:
-      cert-manager.io/cluster-issuer: letsencrypt-prod  # Use the Let's Encrypt issuer
+      cert-manager.io/cluster-issuer: selfsigned  # Use the Let's Encrypt issuer
 
       # |
       # kubernetes.io/ingress.class: nginx
