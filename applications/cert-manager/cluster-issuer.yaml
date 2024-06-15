@@ -9,7 +9,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: selfsigned-cert
-  namespace: cert-manager-test
 spec:
   dnsNames:
     - example.com
