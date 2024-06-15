@@ -11,10 +11,8 @@ spec:
     targetRevision: 0.28.0
     helm:
       releaseName: vault
-      values: |
-        server:
-          dev:
-            enabled: true
+      valueFiles: 
+      - common-values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: vault
