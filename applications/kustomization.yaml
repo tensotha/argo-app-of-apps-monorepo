@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
 - argocd
-- letsencrypt
+- cert-manager
 - vault
