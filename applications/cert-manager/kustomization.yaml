@@ -5,3 +5,4 @@ resources:
 - cert-manager.yaml
 - cluster-issuer.yaml
 - ca.yaml
+- certs.yaml
