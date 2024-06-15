@@ -12,7 +12,7 @@ spec:
   - "test-server.test.svc.cluster.local"
   - "test-server"
   issuerRef:
-    name: test-ca-issuer
+    name: selfsigned
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -28,4 +28,4 @@ spec:
   - "test-client.test.svc.cluster.local"
   - "test-client"
   issuerRef:
-    name: test-ca-issuer
+    name: selfsigned
