@@ -9,7 +9,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/JuanWigg/self-managed-argo
+    repoURL: https://github.com/tensotha/argo-app-of-apps-monorepo
     targetRevision: HEAD
     path: applications
   syncPolicy:
