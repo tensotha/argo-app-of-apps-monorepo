@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: letsencrypt
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - repoURL: https://charts.jetstack.io
+    chart: letsencrypt
+    targetRevision: 1.15.0
+    helm:
+      releaseName: letsencrypt
+      valueFiles:
+      - $values/applications/letsencrypt/values.yaml
+  - repoURL: https://github.com/tensotha/argo-app-of-apps-monorepo
+    targetRevision: HEAD
+    ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: letsencrypt
+  syncPolicy:
+    automated:
+      prune: false # Specifies if resources should be pruned during auto-syncing ( false by default ).
+      selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+      allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).   
+    syncOptions:
+      - CreateNamespace=true
