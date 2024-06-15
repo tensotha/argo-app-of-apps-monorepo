@@ -11,13 +11,11 @@ spec:
     targetRevision: 0.28.0
     helm:
       releaseName: vault
+      valueFiles:
+        - values.yaml  # Path to your values.yaml file
   destination:
     server: "https://kubernetes.default.svc"
     namespace: vault
-  helm:
-      releaseName: vault
-      valueFiles:
-        - values.yaml  # Path to your values.yaml file
   syncPolicy:
     automated:
       prune: false # Specifies if resources should be pruned during auto-syncing ( false by default ).
