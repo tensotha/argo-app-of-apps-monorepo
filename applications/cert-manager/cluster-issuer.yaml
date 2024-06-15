@@ -1,11 +1,8 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-prod
+  name: selfsigned-clusterissuer
 spec:
-  acme:
-    # Replace with your email address
-    email: abdulhakim.alsharif@hotmail.com
-    server: https://acme-v02.api.letsencrypt.org/directory
-    privateKeySecretRef:
-      name: letsencrypt-prod-secret
+  issuerRef:
+    kind: Issuer
+    name: selfsigned-issuer
