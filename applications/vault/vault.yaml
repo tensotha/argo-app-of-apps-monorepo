@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    path: charts/vault
-    repoURL: https://github.com/tensotha/argo-app-of-apps-monorepo
-    targetRevision: HEAD
+    chart: vault
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 0.28.0
     helm:
       releaseName: vault
       valueFiles: 
