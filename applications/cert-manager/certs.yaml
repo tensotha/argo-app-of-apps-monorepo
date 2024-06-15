@@ -29,3 +29,18 @@ spec:
   - "test-client"
   issuerRef:
     name: selfsigned
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: c
+spec:
+  secretName: c-tls
+  isCA: false
+  usages:
+    - server auth
+    - client auth
+  dnsNames:
+  - "c.tensotha.local"
+  issuerRef:
+    name: selfsigned
