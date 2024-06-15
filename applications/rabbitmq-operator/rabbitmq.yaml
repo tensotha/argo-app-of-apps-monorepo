@@ -7,8 +7,8 @@ spec:
   project: default
   sources:
   - repoURL: https://github.com/tensotha/argo-app-of-apps-monorepo  # Can point to either a Helm chart repo or a git repo.
-    targetRevision: HEAD  # For Helm, this refers to the chart version.
-    path: applications/rabbitmq-operator # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
+    targetRevision: HEAD  
+    path: applications/rabbitmq-operator/rabbitmq-operator.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: rabbitmq-operator
