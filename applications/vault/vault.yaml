@@ -5,14 +5,16 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
+  sources:
+  - repoURL: https://helm.releases.hashicorp.com
     chart: vault
-    repoURL: https://helm.releases.hashicorp.com
     targetRevision: 0.28.0
     helm:
       releaseName: vault
-      valueFiles: 
-      - values.yaml
+  - repoURL: https://github.com/tensotha/argo-app-of-apps-monorepo
+    targetRevision: HEAD
+    path: applications/vault
+    ref: values
   destination:
     server: "https://kubernetes.default.svc"
     namespace: vault
