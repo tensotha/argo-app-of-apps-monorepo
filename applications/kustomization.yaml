@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
 - argocd
 - cert-manager
+- grafana
 - rabbitmq-operator
 - vault
