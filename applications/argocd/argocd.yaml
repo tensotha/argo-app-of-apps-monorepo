@@ -18,6 +18,9 @@ spec:
         server:
             extensions:
               enabled: true
+              contents:
+                - name: argo-rollouts
+                  url: https://github.com/argoproj-labs/rollout-extension/releases/download/v1.7.0/extension.tar
   syncPolicy:
     automated:
       prune: false # Specifies if resources should be pruned during auto-syncing ( false by default ).
